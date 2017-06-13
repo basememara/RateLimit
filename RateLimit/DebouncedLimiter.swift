@@ -51,7 +51,7 @@ public final class DebouncedLimiter: AsyncLimiter {
 
 	@objc public func execute() {
 		guard let block = block else { assertionFailure("Block never assigned!"); return }
-		execute(block)
+		execute(block: block)
 	}
 
 	public func reset() {
