@@ -31,7 +31,7 @@ public final class DebouncedLimiter: AsyncLimiter {
 
 	// MARK: - Limiter
 
-	public func execute(_ block: @escaping () -> Void) {
+	@objc public func execute(_ block: @escaping () -> Void) {
 		syncQueue.async { [weak self] in
 			if let workItem = self?.workItem {
 				workItem.cancel()
